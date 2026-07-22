@@ -8,20 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "backend/main.py"
-    },
-    {
-      "src": "/health",
-      "dest": "backend/main.py"
-    },
-    {
-      "src": "/(docs|redoc|openapi.json)(.*)",
-      "dest": "backend/main.py"
-    },
-    {
       "src": "/(.*)",
-      "dest": "backend/main.py"
+      "dest": "backend/main.py/handler"
     }
   ]
 }
