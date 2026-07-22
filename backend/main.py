@@ -352,14 +352,6 @@ async def generate_comparison(cars: list) -> dict:
             "reasoning": "Comparison based on available specifications."
         }
 
-# Vercel serverless function handler
-from fastapi import Request
-from fastapi.responses import JSONResponse
-
-async def handler(request: Request):
-    """Vercel serverless function handler."""
-    return await app(request.scope, request.receive, request._send)
-
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host=settings.API_HOST, port=settings.API_PORT)
