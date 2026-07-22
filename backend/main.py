@@ -39,6 +39,11 @@ app.add_middleware(
 # In-memory feedback storage
 feedback_store = {}
 
+@app.get("/")
+async def root():
+    """Return a simple deployment status response."""
+    return {"status": "ok", "service": "AutoMatch API", "health": "/health"}
+
 @app.get("/health", response_model=HealthResponse)
 async def health_check():
     """Health check endpoint."""
